@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>task manager</title>
+    <link rel="stylesheet" href="show1.css">
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <form method="post" action="/main">
+        <h2>Task Name : <input type="text" name ="name"></h2>
+        <button class="add">Add</button>
+        <br>
+
+
+        <textarea name="description" class="textarea" placeholder="description..."></textarea>
+    
+        
+    </form>
+    <br>
+    <br>
+    <form method="get" action="/alltasks">
+        <button class="alltasks">All Tasks</button>
+    </form>
+    
+</body>
+</html>

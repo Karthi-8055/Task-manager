@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>show all tasks</title>
+    <link rel="stylesheet" href="show1.css">
+</head>
+<body>
+    
+        
+            <div>
+                <ol>
+                    <% for(let task of tasks) { %>
+                    <li>
+                        
+                        <h2>Task : <%= task.name %></h2>  
+                        <p>Description : <%= task.description %></p>
+                        <p>Created : <%= task.createdAt.toString().split(" ").slice(0,5).join(" ") %></p>
+                    </li>
+                    
+                    
+                    <form method="post" action="/alltasks/<%= task._id %>?_method=delete">
+                        <button>Delete</button>
+                    </form>
+
+                    <form method="post" action="/alltasks/<%= task._id %>?_method=put">
+                            <input type="checkbox" name="completed" <%= task.completed ? "checked" : "" %> onChange="this.form.submit()" class="checkbox">
+                    </form>
+                    
+                    <% } %>
+                </ol>
+                
+            </div>
+        <form action="/main">
+            <button>Back</button>
+        </form>
+    
+</body>
+</html>

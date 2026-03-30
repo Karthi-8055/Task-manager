@@ -1,0 +1,23 @@
+.checkbox{
+    position:relative;
+    left:80px;
+    bottom:20px;
+    transform : scale(1.5);
+}
+
+.textarea{
+    height : 120px;
+    width : 300px;
+}
+
+.add{
+    position : relative;
+    left : 350px;
+    bottom : 40px;
+    padding-left : 10px;
+    padding-right : 10px;
+}
+
+body{
+    margin-left : 20px;
+}
