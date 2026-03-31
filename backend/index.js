@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 const path = require("path");
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
@@ -30,7 +31,7 @@ main()
 
 
 //post data
-app.post("/main", (req,res) =>{
+app.post("/main", async (req,res) =>{
     let {name, description} = req.body;
     
 
@@ -40,7 +41,7 @@ app.post("/main", (req,res) =>{
         description : description
         
     });
-    newTask.save()
+    await newTask.save()
     .then((res) =>{
         console.log("data saved");
     }).catch((e)=>{
