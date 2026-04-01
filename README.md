@@ -17,7 +17,7 @@ step 2 : VS code terminal setup ->
         The command is "npm install <dependency name>" or "npm i <dependency name>"
         Start the server "nodemon index.js"
 
-step 3 : Open browser go to "http://localhost:8000/main" you can able to see the main page.
+step 3 : Open browser go to "http://localhost:8000/task" (make sure your server should be running at "step 2") you can able to see the main page.
          enter a new task name and click on "Add" button.
          To see all the stored tasks in db click on "All Tasks" button.
          You can also check the checkbox of task which is completed and can be deleted.
