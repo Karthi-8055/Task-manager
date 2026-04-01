@@ -31,7 +31,7 @@ main()
 
 
 //post data
-app.post("/main", async (req,res) =>{
+app.post("/task", async (req,res) =>{
     let {name, description} = req.body;
     
 
@@ -48,36 +48,36 @@ app.post("/main", async (req,res) =>{
         console.log("data not saved");
     })
 
-    res.redirect("/main");
+    res.redirect("/task");
 
 })
 
 //display tasks
 
-app.get("/alltasks", async (req,res)=>{
+app.get("/tasks", async (req,res)=>{
     let tasks = await Task.find();
     res.render("show",{tasks});
 })
 
 //delete task
-app.delete("/alltasks/:id", async(req,res)=>{
+app.delete("/task/:id", async(req,res)=>{
     let {id} = req.params;
     await Task.findByIdAndDelete(id);
-    res.redirect("/alltasks");
+    res.redirect("/tasks");
 })
 
 //update task
 
-app.put("/alltasks/:id", async(req, res)=>{
+app.put("/task/:id", async(req, res)=>{
     let {id} = req.params;
     let completed = req.body.completed === "on";
     await Task.findByIdAndUpdate(id, {completed});
-    res.redirect("/alltasks");
+    res.redirect("/tasks");
 })
 
 
 //main page
-app.get("/main", (req, res)=>{
+app.get("/task", (req, res)=>{
     res.render("main");
 })
 

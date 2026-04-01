@@ -19,11 +19,11 @@
                     </li>
                     
                     
-                    <form method="post" action="/alltasks/<%= task._id %>?_method=delete">
+                    <form method="post" action="/task/<%= task._id %>?_method=delete">
                         <button>Delete</button>
                     </form>
 
-                    <form method="post" action="/alltasks/<%= task._id %>?_method=put">
+                    <form method="post" action="/task/<%= task._id %>?_method=put">
                             <input type="checkbox" name="completed" <%= task.completed ? "checked" : "" %> onChange="this.form.submit()" class="checkbox">
                     </form>
                     
@@ -31,7 +31,7 @@
                 </ol>
                 
             </div>
-        <form action="/main">
+        <form action="/task">
             <button>Back</button>
         </form>
     
